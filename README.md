@@ -1,43 +1,41 @@
 # Travel Budget Explorer
 
-**Reverse budget search for flights.**
-Enter your departure city, travel date, and budget — get a list of destinations you can afford, sorted by price, continent, or climate.
-
-![Demo](docs/demo.gif)
+A web app to discover travel destinations based on your flight budget and date.
 
 ## Features
-- Input: Departure city, date, budget.
-- Output: Destinations under budget, with price, continent, and climate.
-- Sorting: Price, continent, climate.
-- Data: SQLite (mock data for now; Kiwi API planned).
+- Enter your departure airport, travel date, and budget to see destinations you can afford.
+- Results include flight price, airline, departure/arrival times, and a booking link.
+- Sortable by continent, region, or climate (planned).
 
-## Quickstart
-```bash
-# Clone
-git clone https://github.com/femirins/travel-budget-explorer.git
-cd travel-budget-explorer
+## Tech Stack
+- **Frontend**: HTML, CSS, JavaScript (Bootstrap)
+- **Backend**: Python (Flask) + SQLite (for caching)
+- **API**: Kiwi API (flight pricing)
 
-# Install
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+## How to Run
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/femirins/travel-budget-explorer.git
+   cd travel-budget-explorer
+   ```
 
-# Run
-python3 app.py
-```
+2. Create a virtual environment and install dependencies:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   ```
 
-Open [http://localhost:5000](http://localhost:5000) in your browser.
+3. Run the Flask app:
+   ```bash
+   python app.py
+   ```
 
-## Technical Architecture
-- **Backend:** Flask (Python), SQLite.
-- **Frontend:** Bootstrap 5, vanilla JS.
-- **Data:** Mock flights (NYC → Paris, Tokyo, Bangkok, Sydney, Cape Town).
-- **API:** `/search?departure=NYC&date=2026-12-01&budget=700` → JSON.
+4. Open your browser and navigate to `http://127.0.0.1:5000`.
 
-## Roadmap
-- [ ] Integrate Kiwi API for real-time flight data.
-- [ ] User accounts (save searches, alerts).
-- [ ] Climate/continent filters.
+## Configuration
+- Replace `your_kiwi_api_key` in `app.py` with your actual Kiwi API key.
+- Configure SQLite database for caching flight data.
 
 ## License
 MIT
