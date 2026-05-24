@@ -1,41 +1,57 @@
 # Travel Budget Explorer
 
-A web app to discover travel destinations based on your flight budget and date.
+**Find affordable travel destinations within your budget.**
 
-## Features
-- Enter your departure airport, travel date, and budget to see destinations you can afford.
-- Results include flight price, airline, departure/arrival times, and a booking link.
-- Sortable by continent, region, or climate (planned).
+![Screenshot](https://i.imgur.com/XYZ1234.png)
 
-## Tech Stack
-- **Frontend**: HTML, CSS, JavaScript (Bootstrap)
-- **Backend**: Python (Flask) + SQLite (for caching)
-- **API**: Kiwi API (flight pricing)
+## 🚀 Features
+- Enter your **budget** and **departure date** to discover destinations you can afford.
+- Results include **destination name, price, airline, and images**.
+- **Responsive design** (works on mobile and desktop).
+- **Mock data** for testing (fallback for API restrictions).
 
-## How to Run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/femirins/travel-budget-explorer.git
-   cd travel-budget-explorer
-   ```
+## 🛠️ Installation
 
-2. Create a virtual environment and install dependencies:
-   ```bash
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
+### Prerequisites
+- Python 3.8+
+- pip
 
-3. Run the Flask app:
-   ```bash
-   python app.py
-   ```
+### Setup
+```bash
+git clone https://github.com/fairyfemirins/travel-budget-explorer.git
+cd travel-budget-explorer
+python3 -m venv venv
+source venv/bin/activate  # Linux/Mac
+# venv\Scripts\activate  # Windows
+pip install -r requirements.txt
+```
 
-4. Open your browser and navigate to `http://127.0.0.1:5000`.
+### Run
+```bash
+python app/app.py
+```
+Open [http://localhost:5000](http://localhost:5000) in your browser.
 
-## Configuration
-- Replace `your_kiwi_api_key` in `app.py` with your actual Kiwi API key.
-- Configure SQLite database for caching flight data.
+## 📂 Project Structure
+```
+├── app/
+│   ├── static/             # CSS, JS, images
+│   ├── templates/          # HTML templates
+│   │   └── index.html      # Homepage
+│   └── app.py             # Flask backend
+├── README.md              # Project overview
+├── WHITEPAPER.md          # Design decisions
+└── LICENSE                # MIT License
+```
 
-## License
-MIT
+## 🔧 Technical Architecture
+- **Backend**: Flask (Python)
+- **Frontend**: Bootstrap 5 + Vanilla JS
+- **Data**: Mock JSON (fallback for API restrictions)
+- **Deployment**: Docker (optional)
+
+## 🤝 Contributing
+Contributions are welcome! Open an issue or submit a pull request.
+
+## 📜 License
+MIT License. See [LICENSE](LICENSE) for details.
